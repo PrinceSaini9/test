@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+.App{
+background-color: rgb(24, 25, 27); 
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+    background-color: rgb(24, 25, 27);
+    height: 60px;
+    position: fixed;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.navleft{
+    font-family: Vollkorn, serif;
+    a{
+        color: #ef9349;
+        font-size: 26px;
+    line-height: 40px;
+        text-decoration: none;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left: 24px;
+        position: relative;
+        img{
+            width: 34px;
+            margin-right:5px;
+        }
+    }
+}
+.body{
+    height: 100vh;
+    max-height: 60vw;
+    min-height: 800px;
+    background-color: #18191b;
+    background-image: linear-gradient(rgba(24, 25, 29, 0), rgba(24, 25, 29, 0) 95%, #18191d), url(https://assets.website-files.com/640db57e5194b06ee58b0252/640db57e5194b0fe5a8b0294_head%20v3.jpg);
+    background-position: 0 0, 50%;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
+    padding-top: 66px;
+    padding-bottom: 3vw;
+    overflow: hidden;
+}
+.box1{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    font-family: new-order;
+}
+.headbox{
+    position: relative;
+    height: 320px;
+}
+.heading {
+  font-size: 5.5em;
+  font-weight: 700;
+  line-height: 1.15em;
+  color: #ef9349; /* Changing text color */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 rgba(239, 147, 73, 0.5), /* Adjust opacity as needed */
+    1px 2px 0 rgba(239, 147, 73, 0.5), 
+    1px 3px 0 rgba(239, 147, 73, 0.2), 
+    1px 4px 0 rgba(239, 147, 73, 0.2), 
+    1px 5px 0 rgba(239, 147, 73, 0.2), 
+    1px 6px 0 rgba(239, 147, 73, 0.2), 
+    1px 7px 0 rgba(239, 147, 73, 0.1),
+    1px 8px 0 rgba(239, 147, 73, 0.2),
+    5px 13px 15px black;
+}
+.heading:hover {
+    transition: 0.3s;
+  transform: scale(1.1)translate(-50%, -50%);
+  text-shadow: 1px -1px 0 rgba(239, 147, 73, 0.5), 1px -2px 0 rgba(239, 147, 73, 0.5), 1px -3px 0 rgba(239, 147, 73, 0.5),
+    1px -4px 0 rgba(239, 147, 73, 0.2), 1px -5px 0 rgba(239, 147, 73, 0.2), 1px -6px 0 rgba(239, 147, 73, 0.2), 1px -7px 0 rgba(239, 147, 73, 0.2),
+    1px -8px 0 rgba(239, 147, 73, 0.2), 5px -13px 15px black, 5px -13px 25px rgba(239, 147, 73, 0.5);
+}
+.desc{
+    color: #dbc3a9;
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+.emailinput{
+    width: 50%;
+    max-width: 400px;
+    background-color: #000;
+    border: 1px #000;
+    border-radius: 18px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    display: block;
+    transition: width 0.3s ease; 
+    color: #fff;
+}
+.emailinput:focus{
+    width: 90%;
+}
+.signupbtn{
+    width: 40%;
+    min-width: 132px;
+    color: #18191b;
+    text-align: center;
+    background-color: #ef9349;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px 13px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow .3s, background-color .3s;
+}
+.signupbtn:hover{
+    background-color: rgb(255,242,225);
+    cursor: pointer;
+}
+.lowwer{
+    width: 100%;
+    padding: 50px 100px 200px 100px;
+    background-image: radial-gradient(circle at 100%, #f7a028, #fffbf7);
+    display: flex;
+    justify-content: space-between;
+    font-family: new-order;
+}
+.lowmid{
+    img{
+        width: 430px;
+    }
+}
+.lowleft,.lowright{
+    padding-top: 50px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+.lefthead,.righthead{
+    color: #04101a;
+    font-size: 2.6em;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+.leftdesc,.rightdesc{
+    color: #4d4d4d;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7em;
+}
+.leftbtn{
+    /* color: #ffe4cd;
+    background-color: #18191d;
+    width: 60%;
+    min-width: 132px;
+    text-align: center;
+    border-radius: 40px;
+    padding: 16px 32px 13px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: box-shadow .3s, background-color .3s; */
+    width: 60%;
+}
+.custom-btn {
+    width: 100%;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .btn-5 {
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: #18191d;
+  background: linear-gradient(0deg, #18191d 0%, rgb(61, 60, 60) 100%);
   }
-  to {
-    transform: rotate(360deg);
+  .btn-5:hover {
+    color: #18191d;
+    background: transparent;
+     box-shadow:none;
   }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #18191d;
+    box-shadow:
+     -1px -1px 5px 0px #fff,
+     7px 7px 20px 0px #0003,
+     4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  
+  
+.rightbtn{
+    color: #ffe4cd;
+    background-color: #18191d;
+    width: 100%;
+    min-width: 132px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 26px;
+    transition: opacity .2s;
+    transition: transform 0.3s ease;
+}
+.rightbtn:hover {
+    transform: scale(1.05);
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.50);
+  }
+.thanksbox{
+    background-color: rgb(221,221,221);
+    padding: 1px;
+}
+.thankstext{
+    text-align: center;
+    padding: 20px;
+    display: block;
+    font-family: new-order;
+    line-height: 20px;
+    color: #333;
+    font-size: 14px;
+    border: 2px solid black;
+}
+.errormsg{
+    color: red;
 }
