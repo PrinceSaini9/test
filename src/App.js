@@ -9,7 +9,8 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [done, setDone] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const handleClick = () => {
+ 
+  const handleClick = async () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValid = emailRegex.test(email);
     setIsValidEmail(isValid);
@@ -17,11 +18,23 @@ const App = () => {
     if (isValid) {
       console.log("Valid email:", email);
       setDone(true);
-      
+
+      await fetch('http://localhost:8000/', {
+      mode: 'cors',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+    },
+      body: JSON.stringify({email}),
+    }).then((res)=>{console.log(res);})
+    .catch((error)=>{console.log(error);})
+
     } else {
       console.log("Invalid email:", email);
     }
   };
+
+
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);

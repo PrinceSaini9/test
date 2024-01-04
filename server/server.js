@@ -2,14 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const user = require('./model');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const connectionString = 'mongodb+srv://sainiprincesaini999:deTgNmVihgnmQ48y@cluster0.57cia1j.mongodb.net/DB-2';
 
 // Connect to MongoDB Atlas
-mongoose.connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(connectionString)
     .then(() => {
         console.log('Connection successful');
     })
@@ -21,7 +19,7 @@ const app = express();
 const port = 8000;
 
 app.use(bodyParser.json());
-
+app.use(cors());
 app.get('/get', async (req, res) => {
     res.send("hi");
 });
